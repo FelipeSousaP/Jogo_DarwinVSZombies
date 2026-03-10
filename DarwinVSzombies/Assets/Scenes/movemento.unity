@@ -717,6 +717,8 @@ MonoBehaviour:
   Disparador: {fileID: 1827100454}
   BalaPrefab: {fileID: 1077617721473611222, guid: d65296cf21e99a34a8a6d9d06a257f5b, type: 3}
   QuantidadeDeBala: 3
+  timer: 0
+  timerFinal: 3
   ShootAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   Atirando: 0
 --- !u!1 &1557365434

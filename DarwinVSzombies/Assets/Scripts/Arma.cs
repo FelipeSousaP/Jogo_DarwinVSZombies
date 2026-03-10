@@ -8,6 +8,8 @@ public class Arma : MonoBehaviour
     [SerializeField] GameObject Disparador;
     [SerializeField] GameObject BalaPrefab;
     [SerializeField] int QuantidadeDeBala;
+    [SerializeField] float timer;
+    [SerializeField] float timerFinal = 3;
 
     [Header("Comando")]
     [SerializeField] InputActionReference ShootAction;
@@ -36,26 +38,28 @@ public class Arma : MonoBehaviour
         ShootAction.action.performed -= Shoot;   
         ShootAction.action.canceled -= Shoot;   
     }
-
     void Shoot(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.action.IsPressed()) 
-        {
-            Atirando = true;
-        }
+        Atirando = callbackContext.ReadValueAsButton();// tipo um readvalue so que bool
     }
+
     private void Update()
     {
-        GameObject g = pool.TryGetPool();
-        if (Atirando) 
+        timer += Time.deltaTime;
+        if (Atirando && timer >= timerFinal) 
         {
-            if (g != null)
-            {
-                //impede que vira foguete
-                g.transform.position = Disparador.transform.position;
-                g.SetActive(true); 
-            }
-            // ta atirando em loop
+            atirar();
+        }
+    }
+    void atirar()
+    {
+        GameObject g = pool.TryGetPool();
+        if (g != null)
+        {
+            //impede que vira foguete
+            g.transform.position = Disparador.transform.position;
+            g.SetActive(true);
+            timer = 0;
             Atirando = false;
         }
     }
