@@ -9,12 +9,11 @@ public class ZombieGerator : MonoBehaviour
     [SerializeField] GameObject Zombie;
     [SerializeField] int index;
     [SerializeField] int QuantidadedeZombie;
-    int Aleatório() => index = Random.Range(1, Spawn.Length);
     private void Start()
     {
         for (int i = 0; i < QuantidadedeZombie; i++)
         {
-            GameObject g = Instantiate(Zombie, Spawn[Aleatório()].position, Quaternion.identity, Armazem.transform);
+            GameObject g = Instantiate(Zombie,Armazem); // não preciso definir ponto de geração aqui
             g.SetActive(false);
             pool.SetPool(g);
         }
@@ -23,9 +22,9 @@ public class ZombieGerator : MonoBehaviour
     {
         GameObject g = pool.TryGetPool(); // onde está o erro
         if (g != null) 
-        {   
-            int d = Aleatório();
-            g.transform.position = Spawn[d].position;
+        {
+            index = Random.Range(0, Spawn.Length); // s]ao 4 transforms
+            g.transform.position = Spawn[index].position;
             g.SetActive(true);
         }
     }
