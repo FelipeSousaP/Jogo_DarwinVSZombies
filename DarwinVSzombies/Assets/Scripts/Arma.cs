@@ -21,6 +21,7 @@ public class Arma : MonoBehaviour
         for (int i = 0; i < QuantidadeDeBala; ++i) 
         {
             GameObject bala = Instantiate(BalaPrefab, Disparador.transform.position, Quaternion.identity,Cartucho.transform);
+            bala.SetActive(false);
             pool.SetPool(bala);
         }
     }
@@ -58,9 +59,17 @@ public class Arma : MonoBehaviour
         {
             //impede que vira foguete
             g.transform.position = Disparador.transform.position;
+            g.transform.rotation = Disparador.transform.rotation;// o FDP tava indo pra casa do caralho
+            
+            if(g.TryGetComponent<Bala>(out Bala bala))
+            {
+                //tentando encontrar o objeto com o componente bala
+                bala.SetBala(pool);
+            }
+            
             g.SetActive(true);
-            timer = 0;
-            Atirando = false;
+            timer = 0; // Controlando quantidades de tiros
+            Atirando = false; // evitando loops
         }
     }
 }

@@ -4,7 +4,12 @@ public class Bala : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float speed;
-    objectPool<GameObject> pool = new objectPool<GameObject>();
+    objectPool<GameObject> pool;
+
+    public void SetBala(objectPool<GameObject> _pool)
+    {
+        pool = _pool;
+    }
 
     private void OnEnable()
     {
@@ -17,8 +22,8 @@ public class Bala : MonoBehaviour
         if (collision.gameObject.CompareTag("parede"))
         {
             Debug.Log("acertou;");
-            gameObject.SetActive(false);
             pool.SetPool(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

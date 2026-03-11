@@ -29,6 +29,6 @@ public class Moviment : MonoBehaviour
 
     void Update()
     {
-        Player.position += new Vector3(dir.x, dir.y,0) * Speed * Time.deltaTime;
+        Player.Translate(new Vector3(dir.x, dir.y,0) * Speed * Time.deltaTime);
     }
 }
