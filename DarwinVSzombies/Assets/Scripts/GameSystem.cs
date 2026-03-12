@@ -4,15 +4,18 @@ public class GameSystem : MonoBehaviour
 {
     [SerializeField] int Life;
     [SerializeField] int MaxLife = 3;
+    [SerializeField] float Timer;
+    [SerializeField] float TimeToWin = 50.0f;
     [SerializeField] ScreenAccess screenAccess;
     private void Start()
     {
         Life = MaxLife;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.CompareTag("Carro"))
+        Timer += Time.deltaTime;
+        if (Timer <= TimeToWin) 
         {
             screenAccess._TelaDeVitória();
         }
