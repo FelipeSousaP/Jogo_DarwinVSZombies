@@ -16,6 +16,7 @@ public class ScreenAccess : MonoBehaviour
         UIManeger.Instance.Hide(telavitória);
         UIManeger.Instance.Hide(telaDerrota);
         UIManeger.Instance.Hide(telajogo);
+        UIManeger.Instance.PauseGame();
     }
 
     public void _TeladoJogo()
@@ -24,6 +25,7 @@ public class ScreenAccess : MonoBehaviour
         UIManeger.Instance.Hide(telavitória);
         UIManeger.Instance.Hide(telaDerrota);
         UIManeger.Instance.Hide(telaincial);
+        UIManeger.Instance.ActiveGame();
     }
 
     public void _TelaDeDerrota()
@@ -32,6 +34,7 @@ public class ScreenAccess : MonoBehaviour
         UIManeger.Instance.Hide(telavitória);
         UIManeger.Instance.Hide(telajogo);
         UIManeger.Instance.Hide(telaincial);
+        UIManeger.Instance.PauseGame();
     }
 
     public void _TelaDeVitória()
@@ -40,6 +43,7 @@ public class ScreenAccess : MonoBehaviour
         UIManeger.Instance.Hide(telaDerrota);
         UIManeger.Instance.Hide(telajogo);
         UIManeger.Instance.Hide(telaincial);
+        UIManeger.Instance.PauseGame();
     }
 
     public void Quit() { Application.Quit();}

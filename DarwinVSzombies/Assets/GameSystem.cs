@@ -4,7 +4,7 @@ public class GameSystem : MonoBehaviour
 {
     [SerializeField] int Life;
     [SerializeField] int MaxLife = 3;
-
+    [SerializeField] ScreenAccess screenAccess;
     private void Start()
     {
         Life = MaxLife;
@@ -12,7 +12,6 @@ public class GameSystem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ScreenAccess screenAccess = GetComponent<ScreenAccess>();
         if (collision.CompareTag("Carro"))
         {
             screenAccess._TelaDeVitória();
@@ -21,11 +20,10 @@ public class GameSystem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ScreenAccess screenAccess = GetComponent<ScreenAccess>();
         if(collision.gameObject.TryGetComponent<ZombieController>(out ZombieController zg))
         {
             Life -= 1;
-            if(Life == 0) { screenAccess._TelaDeDerrota(); }
+            if(Life <= 0) { screenAccess._TelaDeDerrota(); }
         }
     }
 }

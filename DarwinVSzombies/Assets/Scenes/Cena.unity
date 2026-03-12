@@ -1152,7 +1152,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 835532984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 927282750}
+        m_TargetAssemblyTypeName: ScreenAccess, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &835532984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,7 +1845,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004418436}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 927282750}
+        m_TargetAssemblyTypeName: ScreenAccess, Assembly-CSharp
+        m_MethodName: _TeladoJogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004418436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2312,6 +2336,7 @@ GameObject:
   - component: {fileID: 1214252042}
   - component: {fileID: 1214252041}
   - component: {fileID: 1214252044}
+  - component: {fileID: 1214252045}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2441,6 +2466,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1214252045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214252040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec5bd2a212ac9749ad20977feb5c452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1557365436}
 --- !u!1 &1279598597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,7 +2561,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1279598600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 927282750}
+        m_TargetAssemblyTypeName: ScreenAccess, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1279598600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2735,7 +2785,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1478874244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 927282750}
+        m_TargetAssemblyTypeName: ScreenAccess, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1478874244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2817,6 +2879,7 @@ GameObject:
   - component: {fileID: 1557365435}
   - component: {fileID: 1557365438}
   - component: {fileID: 1557365437}
+  - component: {fileID: 1557365439}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2946,6 +3009,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Life: 0
   MaxLife: 3
+  screenAccess: {fileID: 927282750}
+--- !u!50 &1557365439
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557365434}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1636802136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,7 +3050,7 @@ GameObject:
   - component: {fileID: 1636802138}
   m_Layer: 0
   m_Name: Carro
-  m_TagString: Untagged
+  m_TagString: Carro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3162,7 +3253,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1659785475}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 927282750}
+        m_TargetAssemblyTypeName: ScreenAccess, Assembly-CSharp
+        m_MethodName: _TeladoJogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1659785475
 MonoBehaviour:
   m_ObjectHideFlags: 0

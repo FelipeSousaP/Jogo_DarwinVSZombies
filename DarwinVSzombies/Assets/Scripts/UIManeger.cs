@@ -16,4 +16,7 @@ public class UIManeger : MonoBehaviour
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
     }
+
+    public void PauseGame(){Time.timeScale = 0;}
+    public void ActiveGame() { Time.timeScale = 1;}
 }
