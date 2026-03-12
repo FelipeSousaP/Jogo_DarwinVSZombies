@@ -15,7 +15,8 @@ public class GameSystem : MonoBehaviour
     private void Update()
     {
         Timer += Time.deltaTime;
-        if (Timer <= TimeToWin) 
+        IconManeger.Instance.UpdateUITimer(Timer);
+        if (Timer >= TimeToWin) 
         {
             screenAccess._TelaDeVitória();
         }
@@ -26,6 +27,7 @@ public class GameSystem : MonoBehaviour
         if(collision.gameObject.TryGetComponent<ZombieController>(out ZombieController zg))
         {
             Life -= 1;
+            IconManeger.Instance.UpdateUILife(Life);
             if(Life <= 0) { screenAccess._TelaDeDerrota(); }
         }
     }

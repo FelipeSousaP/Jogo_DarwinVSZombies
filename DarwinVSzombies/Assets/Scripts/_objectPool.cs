@@ -10,6 +10,7 @@ public class objectPool<T> where T: class // estou dizendo para ele receber CLAS
         Pool.Enqueue(pool); // adicionando um tipo generico na fila
     }
 
+    public int Total() => Pool.Count;
     public T TryGetPool() // Usar Uma condicional
     {
         if (Pool.Count > 0)

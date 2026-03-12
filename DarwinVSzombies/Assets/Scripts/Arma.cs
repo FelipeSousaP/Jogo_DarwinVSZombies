@@ -65,6 +65,8 @@ public class Arma : MonoBehaviour
             {
                 //tentando encontrar o objeto com o componente bala
                 bala.SetBala(pool);
+                IconManeger.Instance.UpdateUIBullet(pool.Total());
+                Debug.Log(pool.Total());
             }
             
             g.SetActive(true);
