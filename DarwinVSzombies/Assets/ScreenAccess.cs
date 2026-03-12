@@ -5,7 +5,11 @@ public class ScreenAccess : MonoBehaviour
     [SerializeField] CanvasGroup telaincial; 
     [SerializeField] CanvasGroup telaDerrota; 
     [SerializeField] CanvasGroup telavitória; 
-    [SerializeField] CanvasGroup telajogo; 
+    [SerializeField] CanvasGroup telajogo;
+    private void Start()
+    {
+        _Telainicial();
+    }
     public void _Telainicial()
     {
         UIManeger.Instance.Show(telaincial);

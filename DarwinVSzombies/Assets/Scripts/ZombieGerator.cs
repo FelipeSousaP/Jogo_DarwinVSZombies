@@ -28,6 +28,10 @@ public class ZombieGerator : MonoBehaviour
             if (Spawn[index] != null)
             {
                 g.transform.position = Spawn[index].position;
+                if(g.TryGetComponent<ZombieController>(out ZombieController component))
+                {
+                    component.Setzombie(pool);
+                }
                 g.SetActive(true);
             }
         }

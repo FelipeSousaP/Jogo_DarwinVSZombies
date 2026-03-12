@@ -19,7 +19,7 @@ public class Bala : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("parede"))
+        if (collision.gameObject.CompareTag("parede") || collision.gameObject.CompareTag("Zombie"))
         {
             Debug.Log("acertou;");
             pool.SetPool(gameObject);

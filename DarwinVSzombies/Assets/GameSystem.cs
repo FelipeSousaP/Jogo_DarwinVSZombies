@@ -22,7 +22,7 @@ public class GameSystem : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         ScreenAccess screenAccess = GetComponent<ScreenAccess>();
-        if(collision.gameObject.TryGetComponent<ZombieGerator>(out ZombieGerator zg))
+        if(collision.gameObject.TryGetComponent<ZombieController>(out ZombieController zg))
         {
             Life -= 1;
             if(Life == 0) { screenAccess._TelaDeDerrota(); }
