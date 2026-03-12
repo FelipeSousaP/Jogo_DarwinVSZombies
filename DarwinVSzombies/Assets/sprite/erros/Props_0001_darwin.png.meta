@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Props_0001_darwin_0: -7920922658284577170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
