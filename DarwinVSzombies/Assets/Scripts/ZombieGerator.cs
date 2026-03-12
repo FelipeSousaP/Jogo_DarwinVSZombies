@@ -20,12 +20,16 @@ public class ZombieGerator : MonoBehaviour
     }
     private void Update()
     {
-        GameObject g = pool.TryGetPool(); // onde está o erro
+        GameObject g = pool.TryGetPool();
         if (g != null) 
         {
-            index = Random.Range(0, Spawn.Length); // s]ao 4 transforms
-            g.transform.position = Spawn[index].position;
-            g.SetActive(true);
+            index = Random.Range(0, Spawn.Length);
+
+            if (Spawn[index] != null)
+            {
+                g.transform.position = Spawn[index].position;
+                g.SetActive(true);
+            }
         }
     }
 }

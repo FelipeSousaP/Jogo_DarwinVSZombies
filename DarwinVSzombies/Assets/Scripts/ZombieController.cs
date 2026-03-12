@@ -3,8 +3,14 @@ using UnityEngine;
 public class ZombieController : MonoBehaviour
 {
     [SerializeField] float spped;
+    [SerializeField] GameObject Player;
+
+    private void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
     void Update()
     {
-        transform.Translate(new Vector3(0,0,0) * spped * Time.deltaTime);       
+        transform.position = Vector2.MoveTowards(transform.position,Player.transform.position,spped * Time.deltaTime);
     }
 }
