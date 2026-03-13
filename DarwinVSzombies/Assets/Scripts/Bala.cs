@@ -21,8 +21,11 @@ public class Bala : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("parede") || collision.gameObject.CompareTag("Zombie"))
         {
-            Debug.Log("acertou;");
             pool.SetPool(gameObject);
+            if (IconManeger.Instance != null)
+            {
+                IconManeger.Instance.UpdateUIBullet(pool.Total());
+            }
             gameObject.SetActive(false);
         }
     }

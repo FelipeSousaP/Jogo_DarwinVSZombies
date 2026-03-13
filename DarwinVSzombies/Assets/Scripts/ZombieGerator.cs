@@ -9,6 +9,7 @@ public class ZombieGerator : MonoBehaviour
     [SerializeField] GameObject Zombie;
     [SerializeField] int index;
     [SerializeField] int QuantidadedeZombie;
+
     private void Start()
     {
         for (int i = 0; i < QuantidadedeZombie; i++)
@@ -21,19 +22,26 @@ public class ZombieGerator : MonoBehaviour
     private void Update()
     {
         GameObject g = pool.TryGetPool();
-        if (g != null) 
+
+        if (g != null)
         {
-            index = Random.Range(0, Spawn.Length);
+            int index = Random.Range(0, Spawn.Length);
 
             if (Spawn[index] != null)
             {
                 g.transform.position = Spawn[index].position;
-                if(g.TryGetComponent<ZombieController>(out ZombieController component))
+
+                // Re-garante que o zumbi sabe qual é a pool dele antes de ativar
+                ZombieController controller = g.GetComponent<ZombieController>();
+                if (controller != null)
                 {
-                    component.Setzombie(pool);
+                    controller.Setzombie(pool);
                 }
+
                 g.SetActive(true);
             }
         }
     }
 }
+    
+

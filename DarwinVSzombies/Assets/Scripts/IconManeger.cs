@@ -7,13 +7,13 @@ public class IconManeger : MonoBehaviour
     private void Awake() { if (_instance == null) { _instance = this; } }
     public static IconManeger Instance => _instance;
     [Header("textos nos icones")]
-    public TMP_Text Life;
     public TMP_Text Bullet;
     public TMP_Text Timer;
+    public TMP_Text life;
 
     public void UpdateUILife(int _life)
     {
-        Life.text = $"{_life}";
+        life.text = $"{_life}";
     }
     public void UpdateUIBullet(int _bullet)
     {

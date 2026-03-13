@@ -24,6 +24,7 @@ public class Arma : MonoBehaviour
             bala.SetActive(false);
             pool.SetPool(bala);
         }
+        //IconManeger.Instance.UpdateUIBullet(pool.Total());
     }
 
     public void OnEnable()
@@ -55,23 +56,26 @@ public class Arma : MonoBehaviour
     void atirar()
     {
         GameObject g = pool.TryGetPool();
+
         if (g != null)
         {
-            //impede que vira foguete
+            IconManeger.Instance.UpdateUIBullet(pool.Total());
+
             g.transform.position = Disparador.transform.position;
-            g.transform.rotation = Disparador.transform.rotation;// o FDP tava indo pra casa do caralho
-            
-            if(g.TryGetComponent<Bala>(out Bala bala))
+            g.transform.rotation = Disparador.transform.rotation;
+
+            if (g.TryGetComponent<Bala>(out Bala bala))
             {
-                //tentando encontrar o objeto com o componente bala
                 bala.SetBala(pool);
-                IconManeger.Instance.UpdateUIBullet(pool.Total());
-                Debug.Log(pool.Total());
             }
-            
+
             g.SetActive(true);
-            timer = 0; // Controlando quantidades de tiros
-            Atirando = false; // evitando loops
+            timer = 0;
+            Atirando = false;
+        }
+        else
+        {
+            Debug.Log("Sem munição no Pool!");
         }
     }
 }

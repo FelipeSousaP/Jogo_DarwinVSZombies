@@ -7,7 +7,10 @@ public class objectPool<T> where T: class // estou dizendo para ele receber CLAS
 
     public void SetPool(T pool)
     {
-        Pool.Enqueue(pool); // adicionando um tipo generico na fila
+        if (!Pool.Contains(pool))
+        {
+            Pool.Enqueue(pool); // adicionando um tipo generico na fila
+        }
     }
 
     public int Total() => Pool.Count;

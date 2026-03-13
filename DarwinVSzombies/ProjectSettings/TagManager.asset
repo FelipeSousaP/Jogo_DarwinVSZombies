@@ -44,6 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: zombie
+    uniqueID: 294603511
+    locked: 0
   - name: arvores
     uniqueID: 2095268265
     locked: 0

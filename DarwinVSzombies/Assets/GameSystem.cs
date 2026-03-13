@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class GameSystem : MonoBehaviour
 {
     [SerializeField] int Life;
@@ -11,24 +10,22 @@ public class GameSystem : MonoBehaviour
     {
         Life = MaxLife;
     }
-
     private void Update()
     {
         Timer += Time.deltaTime;
         IconManeger.Instance.UpdateUITimer(Timer);
-        if (Timer >= TimeToWin) 
+        if (Timer >= TimeToWin)
         {
             screenAccess._TelaDeVitória();
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.TryGetComponent<ZombieController>(out ZombieController zg))
+        if (collision.gameObject.TryGetComponent<ZombieController>(out ZombieController zg))
         {
             Life -= 1;
             IconManeger.Instance.UpdateUILife(Life);
-            if(Life <= 0) { screenAccess._TelaDeDerrota(); }
+            if (Life <= 0) { screenAccess._TelaDeDerrota(); }
         }
     }
 }

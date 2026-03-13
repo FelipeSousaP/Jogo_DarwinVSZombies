@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScreenAccess : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ScreenAccess : MonoBehaviour
     {
         _Telainicial();
     }
+
+    public void Reniciar() { SceneManager.LoadScene(0); }
     public void _Telainicial()
     {
         UIManeger.Instance.Show(telaincial);
