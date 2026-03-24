@@ -27,6 +27,3 @@ Saí do básico e usei o novo **Input System** da Unity.
 1. Clona aí: `git clone https://github.com/seu-usuario/darwin-vs-zombies.git`
 2. Abre no Unity (Usei a unity 6000.30).
 3. Só dar Play!
-1. Clona aí: `git clone https://github.com/seu-usuario/darwin-vs-zombies.git`
-2. Abre no Unity (tô usando a 2022.3 ou superior).
-3. Só dar Play!
